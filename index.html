@@ -1,0 +1,233 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Developed on the uncensorable smart contract platform, Ethereum Classic, Snail Cash is a token manually distributed to active users within the Ethereum Classic ecosystem.">
+		<meta name="keywords" content="Snail Cash, Blockchain, Cryptocurrency, Ethereum, Classic, Bitcoin, Token, ERC20, ERC223">
+		<meta name="author" content="Snail Cash">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		<title>Snail Cash</title>
+		<style>
+			html {
+				overflow-x: hidden;
+			}
+		
+			body {
+				overflow-x:hidden;
+			}
+			
+			a {
+				font-size: 26px;
+			}
+			
+			h2 {
+				font-size: 100px;
+			}
+			
+			h3 {
+				font-size: 32px;
+			}
+			.accordion {
+				border: none;
+				outline: none;
+				background: none;
+				transition: 0.4s;
+				font-size: 20px;
+			}
+			
+			.accordion:after {
+				content: '⮝';
+				font-size: 20px;
+				float: right;
+				margin-left: 5px;
+			}
+
+			.active:after {
+				content: "⮟";
+			}
+			
+			.accordion:hover {
+				text-decoration: underline;
+			}
+			
+			.details-button {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.panel {
+				padding: 0 18px;
+				background-color: white;
+				overflow: hidden;
+				max-height: 0;
+				transition: max-height 0.2s ease-out;
+			}
+			
+			.centered {
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				overflow-x:hidden;
+				width: 100%;
+				max-width: 500px;
+			}
+			
+			@media only screen and (max-width: 600px) {
+				a {
+					font-size: 20px;
+				}
+				
+				h2 {
+					font-size: 70px;
+				}
+				
+				h3 {
+					font-size: 25px;
+				}
+			}
+			
+			@media only screen and (max-width: 350px) {
+				a {
+					font-size: 20px;
+				}
+				
+				h2 {
+					font-size: 60px;
+				}
+				
+				h3 {
+					font-size: 20px;
+				}
+			}
+			
+			@media only screen and (max-width: 280px) {
+				a {
+					font-size: 15px;
+				}
+				
+				h2 {
+					font-size: 50px;
+				}
+				
+				h3 {
+					font-size: 16px;
+				}
+			}
+			
+			.horizontal-center {
+				
+			}
+			
+			.text {
+				text-align: center; color: black;
+				margin: 0px;
+				font-family: 'Quicksand', sans-serif;
+			}
+			
+			.bold {
+				font-weight: bold;
+			}
+			
+			.gap-top-10 {
+				margin-top: 10px;
+			}
+			
+			.gap-top-20 {
+				margin-top: 20px;
+			}
+			
+			.gap-top-30 {
+				margin-top: 30px;
+			}
+			
+			.snail {
+				font-size: 120px;
+				margin: 0px;
+				-moz-transform:translateX(-100%);
+				-webkit-transform:translateX(-100%);	
+				transform:translateX(-100%);
+				-moz-animation: snail 5s linear infinite;
+				-webkit-animation: snail 5s linear infinite;
+				animation: snail 5s linear infinite;
+			}
+			
+			@-moz-keyframes snail {
+				0%   { -moz-transform: translateX(-100%); }
+				100% { -moz-transform: translateX(300%); }
+			}
+			@-webkit-keyframes snail {
+				0%   { -webkit-transform: translateX(-100%); }
+				100% { -webkit-transform: translateX(300%); }
+			}
+			@keyframes snail {
+				0%   { 
+					-moz-transform: translateX(-100%);
+					-webkit-transform: translateX(-100%);
+					transform: translateX(-100%); 		
+				}
+				100% { 
+					-moz-transform: translateX(300%);
+					-webkit-transform: translateX(300%);
+					transform: translateX(300%); 
+				}
+			}
+		</style>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+		<div class="centered">
+			<div>
+				<h1 style="display: inline-block;" class="snail">🐌</h1>
+			</div>
+			<h2 class="text">Snail Cash</h2>
+			<h3 class="text">An Ethereum Classic Asset</h3>
+			<div class="gap-top-30" style="text-align: center;">
+				<a href="https://blockscout.com/etc/mainnet/tokens/0x9FD5C62A90ED0508c11a724302A809CC16F42aEc/" class="text" style="display: inline-block; margin: 0px 10px;">Explorer</a>
+				<a href="#" class="text" style="display: inline-block; margin: 0px 10px;">Snailpaper</a>
+				<a href="https://www.saturn.network/exchange/ETC/order-book/0x9fd5c62a90ed0508c11a724302a809cc16f42aec" class="text" style="display: inline-block; margin: 0px 10px;">Trade</a>
+			</div>
+			
+			<div class="gap-top-30">
+				<div class="details-button">
+					<button id="accordion" class="accordion text bold">Details</button>
+				</div>
+				
+				<div id="details" class="panel">
+					<h4 class="text bold gap-top-10">Network</h4>
+					<p class="text">Ethereum Classic (ETC)</p>
+					
+					<h4 class="text bold gap-top-10">Contract</h4>
+					<p class="text">0x9FD5C62A90ED0508c11a724302A809CC16F42aEc</p>
+					
+					<h4 class="text bold gap-top-10">Symbol/Ticker</h4>
+					<p class="text">SNAIL</p>
+					
+					<h4 class="text bold gap-top-10">Decimals</h4>
+					<p class="text">8</p>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			let acc = document.getElementById("accordion");
+			let i;
+
+			acc.addEventListener("click", function() {
+				this.classList.toggle("active");
+				let panel = document.getElementById("details");
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+				}
+			});
+		</script>
+	</body>
+
+</html>
