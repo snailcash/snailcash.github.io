@@ -1,6 +1,4 @@
-
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -70,18 +68,27 @@
 			}
 			
 			.panel {
-				padding: 0 18px;
+				padding: 0px 18px;
 				background-color: white;
 				overflow: hidden;
 				max-height: 0;
 				transition: max-height 0.2s ease-out;
 			}
 			
+			.content {
+				height: 90%;
+				display: flex;
+				flex-flow: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.break {
+				flex-basis: 100%;
+				transition: height 0.1s ease-out;
+			}
+			
 			.centered {
-				position: relative;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
 				overflow-x: hidden;
 				width: 100%;
 				max-width: 500px;
@@ -99,6 +106,10 @@
 				h3 {
 					font-size: 25px;
 				}
+				
+				p {
+					font-size: 14px;
+				}
 			}
 			
 			@media only screen and (max-width: 350px) {
@@ -112,6 +123,10 @@
 				
 				h3 {
 					font-size: 20px;
+				}
+				
+				p {
+					font-size: 12px;
 				}
 			}
 			
@@ -127,10 +142,10 @@
 				h3 {
 					font-size: 16px;
 				}
-			}
-			
-			.horizontal-center {
 				
+				p {
+					font-size: 10px;
+				}
 			}
 			
 			.text {
@@ -156,13 +171,14 @@
 			}
 			
 			.footer {
-				position:absolute;
-				bottom:30px;
-				height:20px;
+				position:fixed;
+				bottom:0;
+				height:50px;
 				display: block;
 				margin-left: auto;
 				margin-right: auto;
 				width: 100%;
+				background: white;
 			}
 			
 			.snail {
@@ -184,6 +200,7 @@
 				0%   { -webkit-transform: translateX(-240px); }
 				100% { -webkit-transform: translateX(500px); }
 			}
+			
 			@keyframes snail {
 				0%   { 
 					-moz-transform: translateX(-240px);
@@ -193,7 +210,7 @@
 				100% { 
 					-moz-transform: translateX(500px);
 					-webkit-transform: translateX(500px);
-					transform: translateX(500px); 
+					transform: translateX(500px);
 				}
 			}
 		</style>
@@ -201,46 +218,50 @@
 	</head>
 	
 	<body>
-		<div class="centered">
-			<div>
-				<img style="display: inline-block;" class="snail" src="./snail.svg" width="150px">
-			</div>
-			<h2 class="text">Snail Cash</h2>
-			<h3 class="text">An Ethereum Classic Asset</h3>
-			<div class="gap-top-30" style="text-align: center;">
-				<a href="https://blockscout.com/etc/mainnet/tokens/0x9FD5C62A90ED0508c11a724302A809CC16F42aEc/" class="text buttons" style="display: inline-block; margin: 0px 10px;">Explorer</a>
-				<a href="#" class="text buttons" style="display: inline-block; margin: 0px 10px;">Snailpaper</a>
-				<a href="https://www.saturn.network/exchange/ETC/order-book/0x9fd5c62a90ed0508c11a724302a809cc16f42aec" class="text buttons" style="display: inline-block; margin: 0px 10px;">Trade</a>
-			</div>
-			
-			<div class="gap-top-30">
-				<div class="details-button">
-					<button id="accordion" class="accordion text bold">Details</button>
+		<div id="content" class="content">
+			<div class="centered">
+				<div>
+					<img style="display: inline-block;" class="snail" src="./snail.svg" width="150px">
+				</div>
+				<h2 class="text">Snail Cash</h2>
+				<h3 class="text">An Ethereum Classic Asset</h3>
+				<div class="gap-top-30" style="text-align: center;">
+					<a href="https://blockscout.com/etc/mainnet/tokens/0x9FD5C62A90ED0508c11a724302A809CC16F42aEc/" class="text buttons" style="display: inline-block; margin: 0px 10px;">Explorer</a>
+					<a href="./paper.html" class="text buttons" style="display: inline-block; margin: 0px 10px;">Snailpaper</a>
+					<a href="https://www.saturn.network/exchange/ETC/order-book/0x9fd5c62a90ed0508c11a724302a809cc16f42aec" class="text buttons" style="display: inline-block; margin: 0px 10px;">Trade</a>
 				</div>
 				
-				<div id="details" class="panel">
-					<h4 class="text bold gap-top-10">Network</h4>
-					<p class="text">Ethereum Classic (ETC)</p>
-					
-					<h4 class="text bold gap-top-10">Contract</h4>
-					<p class="text">0x9FD5C62A90ED0508c11a724302A809CC16F42aEc</p>
-					
-					<h4 class="text bold gap-top-10">Symbol/Ticker</h4>
-					<p class="text">SNAIL</p>
-					
-					<h4 class="text bold gap-top-10">Decimals</h4>
-					<p class="text">8</p>
+				<div class="gap-top-30" style="position: absolute; width: 100%; max-width: 500px;">
+					<div class="details-button">
+						<button id="accordion" class="accordion text bold">Details</button>
+					</div>
+					<div id="details" class="panel" style="margin-bottom: 60px;">
+						<div>
+							<h4 class="text bold gap-top-10">Network</h4>
+							<p class="text">Ethereum Classic (ETC)</p>
+							
+							<h4 class="text bold gap-top-10">Contract</h4>
+							<p class="text">0x9FD5C62A90ED0508c11a724302A809CC16F42aEc</p>
+							
+							<h4 class="text bold gap-top-10">Symbol/Ticker</h4>
+							<p class="text">SNAIL</p>
+							
+							<h4 class="text bold gap-top-10">Decimals</h4>
+							<p class="text">8</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		
-		<div class="footer">
-			<p class="text">© Snail Cash 2020</p>
-			<div class="footer-text">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" class="footer-text">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" class="footer-text">www.flaticon.com</a></div>
+			<div class="footer">
+				<p class="text">© Snail Cash 2020</p>
+				<div class="footer-text">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" class="footer-text">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" class="footer-text">www.flaticon.com</a></div>
+			</div>
 		</div>
 		
 		<script>
 			let acc = document.getElementById("accordion");
+			let breaker = document.getElementById("breaker");
 			let i;
 
 			acc.addEventListener("click", function() {
